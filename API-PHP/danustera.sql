@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 04, 2021 at 01:09 PM
+-- Generation Time: May 04, 2021 at 03:45 PM
 -- Server version: 5.6.20-log
 -- PHP Version: 5.4.31
 
@@ -44,14 +44,14 @@ CREATE TABLE IF NOT EXISTS `makanan` (
 
 CREATE TABLE IF NOT EXISTS `user` (
 `id_user` int(11) NOT NULL,
-  `nama_lengkap` varchar(255) DEFAULT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(8) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') DEFAULT NULL,
-  `no_telp` int(12) DEFAULT NULL,
-  `foto_profil` varchar(255) DEFAULT NULL
+  `alamat` varchar(255) NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `no_telp` int(12) NOT NULL,
+  `foto_profil` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `username`, `password`, `email`, `alamat`, `jenis_kelamin`, `no_telp`, `foto_profil`) VALUES
-(2, NULL, 'Joko', 'joko123', 'jokojoko@gmail.com', NULL, NULL, NULL, NULL),
-(3, NULL, 'Budi', 'Budi123', 'Budi@gmail.com', NULL, NULL, NULL, NULL);
+(2, '', 'Joko', 'joko123', 'jokojoko@gmail.com', '', '', 0, ''),
+(3, '', 'Budi', 'Budi123', 'Budi@gmail.com', '', '', 0, '');
 
 --
 -- Indexes for dumped tables
