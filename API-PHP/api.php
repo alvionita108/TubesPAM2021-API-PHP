@@ -41,13 +41,18 @@ function normal(){
 //function to create or add new user
 function create(){
     global $koneksi;
-    $username = $_POST['username']; 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $nama_lengkap = $_POST['nama_lengkap']; 
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
+    $email = $_POST['email'];  
+    $alamat = $_POST['alamat'];  
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $no_telp = $_POST['no_telp'];
+    $foto_profil = $_POST['foto_profil'];
 
     $hasil = "Gagal menambah data";
     if($username and $email and $password){
-        $sql1 = "insert into user(username,  password,email) values ('$username',  '$password', '$email')";
+        $sql1 = "insert into user(nama_lengkap, username, password,email, alamat, jenis_kelamin, no_telp, foto_profil) values ('$username',  '$password', '$email','$alamat', '$jenis_kelamin', '$no_telp', '$foto_profil')";
         $q1 = mysqli_query($koneksi, $sql1);
         if($q1){
             $hasil='Berhasil menambah data';
