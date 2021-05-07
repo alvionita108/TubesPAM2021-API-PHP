@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 07, 2021 at 04:02 AM
+-- Generation Time: May 07, 2021 at 01:14 PM
 -- Server version: 5.6.20-log
 -- PHP Version: 5.4.31
 
@@ -45,11 +45,11 @@ CREATE TABLE IF NOT EXISTS `makanan` (
 CREATE TABLE IF NOT EXISTS `user` (
   `nama_lengkap` varchar(255) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(8) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `alamat` varchar(255) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
-  `no_telp` int(13) NOT NULL,
+  `jenis_kelamin` varchar(9) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
   `foto_profil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
