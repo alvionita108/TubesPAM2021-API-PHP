@@ -18,11 +18,10 @@ switch($op){
 
 function normal(){
     global $koneksi;
-    $sql1 = "select * from user order by id_user desc";
+    $sql1 = "select * from user order by username desc";
     $q1 = mysqli_query($koneksi, $sql1);
     while($r1 = mysqli_fetch_array($q1)){
         $hasil[]= array(
-            'id_user' => $r1['id_user'],
             'nama_lengkap' => $r1['nama_lengkap'],
             'username' => $r1['username'],
             'password' => $r1['password'],
@@ -67,12 +66,11 @@ function detail(){
     global $koneksi;
     $id_user = $_GET['id_user'];
 
-    $sql1 = "select * from user where id_user = '$id_user'";
+    $sql1 = "select * from user where username = '$username'";
     $q1 = mysqli_query($koneksi, $sql1);
 
     while($r1 = mysqli_fetch_array($q1)){
         $hasil[]= array(
-            'id_user' => $r1['id_user'],
             'nama_lengkap' => $r1['nama_lengkap'],
             'username' => $r1['username'],
             'password' => $r1['password'],
