@@ -64,7 +64,7 @@ function create(){
 //function to get detail user
 function detail(){
     global $koneksi;
-    $id_user = $_GET['id_user'];
+     $username = $_GET['username'];
 
     $sql1 = "select * from user where username = '$username'";
     $q1 = mysqli_query($koneksi, $sql1);
