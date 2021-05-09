@@ -30,7 +30,7 @@ function normal(){
             'email' => $r1['email'],
             'alamat' => $r1['alamat'],
             'jenis_kelamin' => $r1['jenis_kelamin'],
-            'no_telp' => $r1['no_telp'],
+            'no_telepon' => $r1['no_telepon'],
             'foto_profil' => $r1['foto_profil']
         );
     }
@@ -45,15 +45,16 @@ function create(){
     $username = $_POST['username']; 
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $nama_lengkap = $_POST['nama_lengkap']; 
     $alamat = $_POST['alamat'];  
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $no_telp = $_POST['no_telp'];
+    $no_telepon = $_POST['no_telepon'];
     $foto_profil = $_POST['foto_profil'];
-    $nama_lengkap = $_POST['nama_lengkap']; 
+    
 
-    $hasil = "Gagal menambah data";
-    if($username and $email and $password and $alamat and $jenis_kelamin and $no_telp and $foto_profil and $nama_lengkap){
-        $sql1 = "insert into user(username, password,email, nama_lengkap, alamat, jenis_kelamin, no_telp, foto_profil) values ('$username', '$password' ,'$email', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$no_telp', '$foto_profil')";
+    $hasil = "Gagal menambah data, silahkan masukkan ulang";
+    if($username and $email and $password and $alamat and $jenis_kelamin and $no_telepon and $foto_profil and $nama_lengkap){
+        $sql1 = "insert into user(username, password,email, nama_lengkap, alamat, jenis_kelamin, no_telepon, foto_profil) values ('$username', '$password' ,'$email', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$no_telepon', '$foto_profil')";
         $q1 = mysqli_query($koneksi, $sql1);
         if($q1){
             $hasil='Berhasil menambah data';
@@ -79,7 +80,7 @@ function detail(){
             'email' => $r1['email'],
             'alamat' => $r1['alamat'],
             'jenis_kelamin' => $r1['jenis_kelamin'],
-            'no_telp' => $r1['no_telp'],
+            'no_telepon' => $r1['no_telepon'],
             'foto_profil' => $r1['foto_profil']
         );
     }
@@ -96,7 +97,7 @@ function update(){
     $email = $_POST['email'];  
     $alamat = $_POST['alamat'];  
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $no_telp = $_POST['no_telp'];
+    $no_telepon = $_POST['no_telepon'];
     $foto_profil = $_POST['foto_profil'];
 
   
@@ -120,8 +121,8 @@ function update(){
         $set[] = "jenis_kelamin='$jenis_kelamin'";
     }
 
-    if ($no_telp){
-        $set[] = "no_telp='$no_telp'";
+    if ($no_telepon){
+        $set[] = "no_telepon='$no_telepon'";
     }
 
     if ($foto_profil){
