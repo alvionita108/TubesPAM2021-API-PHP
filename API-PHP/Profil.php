@@ -25,5 +25,6 @@ if ($sql->num_rows != 0) {
         );
     }
 }
+
 $data['result'] = $hasil;
 echo (json_encode($data));
