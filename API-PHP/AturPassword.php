@@ -12,5 +12,4 @@ if ($koneksi->query($sql)) {
 } else {
     echo json_encode("gagal" . $koneksi->error);
 }
-
 $koneksi->close();
