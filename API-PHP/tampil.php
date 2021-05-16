@@ -11,8 +11,12 @@ while ($row = mysqli_fetch_array($sql)) {
         'foto_makanan' => $row['foto_makanan'],
         'stok_harian' => $row['stok_harian'],
         'harga_satuan' => $row['harga_satuan'],
+        'nama_lengkap' => $row['nama_lengkap'],
+        'alamat' => $row['alamat'],
+        'no_telp' => $row['no_telp'],
     );
 }
+
 $data['result'] = $hasil;
 
 echo json_encode($data);
