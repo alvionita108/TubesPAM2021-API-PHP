@@ -12,6 +12,7 @@ $no_telp = $data['no_telp'];
 $password = $data['password'];
 
 $sql = "insert into user(username, password) values ('$username', '$password' ,'$email', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$no_telp')";
+
 $info = array();
 $info['sql'] = $sql;
 if (mysqli_query($koneksi, $sql)) {
