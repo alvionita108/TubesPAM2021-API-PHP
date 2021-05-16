@@ -3,6 +3,7 @@ include_once "koneksi.php";
 $data = json_decode(file_get_contents('php://input'), true);
 $username = $data['username'];
 $sql = $koneksi->query("SELECT * FROM `user` where username = '$username'");
+
 if ($sql->num_rows != 0) {
     while ($row = mysqli_fetch_array($sql)) {
         if($row['jenis_kelamin'] == 0){
