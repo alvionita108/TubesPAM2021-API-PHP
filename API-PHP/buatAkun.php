@@ -5,7 +5,13 @@ $data = json_decode(file_get_contents('php://input'), true);
 $username = $data['username'];
 $password = $data['password'];
 
-$sql = "insert into user(username, password) values ('$username', '$password')";
+$email = $data['email'];
+$alamat = $data['alamat'];
+$jenis_kelamin = $data['jenis_kelamin'];
+$no_telp = $data['no_telp'];
+$password = $data['password'];
+
+$sql = "insert into user(username, password) values ('$username', '$password' ,'$email', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$no_telp')";
 $info = array();
 $info['sql'] = $sql;
 if (mysqli_query($koneksi, $sql)) {
