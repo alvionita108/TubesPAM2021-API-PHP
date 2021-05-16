@@ -8,7 +8,11 @@ while ($row = mysqli_fetch_array($sql)) {
         'id_makanan' => $row['id_makanan'],
         'nama_makanan' => $row['nama_makanan'],
         'deskripsi_makanan' => $row['deskripsi_makanan'],
-    );
-}
-
+        'foto_makanan' => $row['foto_makanan'],
+        'stok_harian' => $row['stok_harian'],
+        'harga_satuan' => $row['harga_satuan'],
+        'nama_lengkap' => $row['nama_lengkap'],
+        'alamat' => $row['alamat'],
+        'no_telp' => $row['no_telp'],
+    );}
 echo json_encode($hasil);
