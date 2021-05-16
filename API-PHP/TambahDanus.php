@@ -29,5 +29,22 @@ if ($sql->num_rows == 0) {
     }
     $nama_foto = "DANUS" . "-" . time() . ".jpeg";
     $foto_makanan = 'http://10.117.90.83/api/API-DanusanApp/API/'.$nama_foto;
+  if (move_uploaded_file($file['photo']['tmp_name'], $folderUpload . "/" . $nama_foto)) {
+        $sql = "INSERT INTO `makanan`(`id_user`, `id_makanan`, `nama_makanan`, `deskripsi_makanan`, `foto_makanan`, `stok_harian`, `harga_satuan`, `nama_lengkap`, `alamat`, `no_telp`) VALUES ('$id_user','','$nama_makanan','$deskripsi_makanan','$foto_makanan','$stok_harian','$harga_satuan','$nama_lengkap','$alamat','$no_telp')";
+        $info = array();
+        $info['sql'] = $sql;
+        if (mysqli_query($koneksi, $sql)) {
+            $info = "Makanan berhasil ditambahkan";
+        } else {
+            $info = mysqli_error($koneksi);
+        }
 
+        mysqli_close($koneksi);
+        echo json_encode($info);
+    }
+    else{
+        mysqli_close($koneksi);
+        echo json_encode("Ada kesalahan,silahkan coba lagi");
+    }
+}
 }
