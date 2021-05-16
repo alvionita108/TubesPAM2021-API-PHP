@@ -14,5 +14,7 @@ while ($row = mysqli_fetch_array($sql)) {
         'nama_lengkap' => $row['nama_lengkap'],
         'alamat' => $row['alamat'],
         'no_telp' => $row['no_telp'],
-    );}
+    );
+}
+
 echo json_encode($hasil);
