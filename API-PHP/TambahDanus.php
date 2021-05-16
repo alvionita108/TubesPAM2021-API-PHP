@@ -17,6 +17,8 @@ if ($sql->num_rows == 0) {
     $nama_lengkap = $row['nama_lengkap'];
     $alamat = $row['alamat'];
     $no_telp = $row['no_telp'];
+
+
     $nama_makanan = $data['nama_makanan'];
     $deskripsi_makanan = $data['deskripsi_makanan'];
     $stok_harian = $data['stok_harian'];
@@ -29,7 +31,8 @@ if ($sql->num_rows == 0) {
     }
     $nama_foto = "DANUS" . "-" . time() . ".jpeg";
     $foto_makanan = 'http://10.117.90.83/api/API-DanusanApp/API/'.$nama_foto;
-  if (move_uploaded_file($file['photo']['tmp_name'], $folderUpload . "/" . $nama_foto)) {
+
+    if (move_uploaded_file($file['photo']['tmp_name'], $folderUpload . "/" . $nama_foto)) {
         $sql = "INSERT INTO `makanan`(`id_user`, `id_makanan`, `nama_makanan`, `deskripsi_makanan`, `foto_makanan`, `stok_harian`, `harga_satuan`, `nama_lengkap`, `alamat`, `no_telp`) VALUES ('$id_user','','$nama_makanan','$deskripsi_makanan','$foto_makanan','$stok_harian','$harga_satuan','$nama_lengkap','$alamat','$no_telp')";
         $info = array();
         $info['sql'] = $sql;
