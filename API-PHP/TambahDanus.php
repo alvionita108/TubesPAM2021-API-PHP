@@ -47,4 +47,3 @@ if ($sql->num_rows == 0) {
         echo json_encode("Ada kesalahan,silahkan coba lagi");
     }
 }
-}
